@@ -17,13 +17,12 @@ from encryption_methods import (
     rot47_encode,  rot47_decode,
 )
 
-# ── All reversible methods ─────────────────────────────────────────────
+# All reversible methods 
 ALL_METHODS = [
     "BASE16", "BASE32", "BASE64", "BASE62", "BASE58", "BASE85", "BASE91",
     "ROT13", "ROT5", "ROT18", "ROT47", "ROT-N",
 ]
 
-# ── Dispatch table: method → (encode_fn, decode_fn) ───────────────────
 # ROT-N uses a shift parameter — handled separately in the UI
 DISPATCH = {
     "BASE16": (base16_encode, base16_decode),
@@ -39,14 +38,14 @@ DISPATCH = {
     "ROT47":  (rot47_encode,  rot47_decode),
 }
 
-# ── Page config ───────────────────────────────────────────────────────
+# Page config
 st.set_page_config(
     page_title="AI Encoding Assistant",
     page_icon="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/lock-fill.svg",
     layout="wide",
 )
 
-# ── Bootstrap Icons + minimal styling ────────────────────────────────
+# Bootstrap Icons + minimal styling 
 st.markdown(
     """
     <link rel="stylesheet"
@@ -94,9 +93,8 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# ══════════════════════════════════════════════════════════════════════
+
 #  SIDEBAR — Methods Dashboard
-# ══════════════════════════════════════════════════════════════════════
 with st.sidebar:
     st.markdown(
         '<h3 style="margin:0 0 0.2rem 0;">'
@@ -104,6 +102,8 @@ with st.sidebar:
         "</h3>",
         unsafe_allow_html=True,
     )
+    st.caption("Created and managed by Husnain and Usman ")
+    st.caption("Roll No : 23611, 23626")
     st.caption("All supported encoding categories")
 
     # ── Base Encodings ────────────────────────────────────────────────
@@ -169,9 +169,9 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
-# ══════════════════════════════════════════════════════════════════════
+
 #  MAIN — Header
-# ══════════════════════════════════════════════════════════════════════
+
 st.markdown(
     '<h1 style="margin-bottom:0.2rem;">'
     '<i class="bi bi-lock-fill"></i> AI Encoding Assistant'
@@ -181,12 +181,12 @@ st.markdown(
 st.caption("Enter your message — the AI will suggest the best encoding method.")
 st.divider()
 
-# ── Message input ─────────────────────────────────────────────────────
+# Message input
 message = st.text_area("Your Message", placeholder="Type or paste your message here...")
 
-# ══════════════════════════════════════════════════════════════════════
-#  STEP 1 — Analyze
-# ══════════════════════════════════════════════════════════════════════
+
+#  Analyze
+
 if st.button("Analyze", type="primary"):
     if not message.strip():
         st.warning("Please enter a message first.")
@@ -215,7 +215,7 @@ if st.button("Analyze", type="primary"):
         st.session_state.message   = message
         st.session_state.parsed    = parsed
 
-# ── Show AI recommendation ────────────────────────────────────────────
+# Show AI recommendation 
 if "ai_method" in st.session_state:
     parsed = st.session_state.parsed
     ai_method = st.session_state.ai_method
@@ -257,9 +257,7 @@ if "ai_method" in st.session_state:
 
     st.divider()
 
-    # ══════════════════════════════════════════════════════════════════
     #  STEP 2 — Encode
-    # ══════════════════════════════════════════════════════════════════
     st.markdown(
         '<h3 style="margin-bottom:0.4rem;">'
         '<i class="bi bi-key-fill"></i> Encode Message'
@@ -299,9 +297,9 @@ if "ai_method" in st.session_state:
         st.markdown(f"**{label} Output**")
         st.code(st.session_state.encoded_result, language=None)
 
-# ══════════════════════════════════════════════════════════════════════
+
 #  STEP 3 — Decode
-# ══════════════════════════════════════════════════════════════════════
+
 st.divider()
 st.markdown(
     '<h2 style="margin-bottom:0.4rem;">'
