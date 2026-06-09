@@ -40,7 +40,7 @@ DISPATCH = {
 
 # Page config
 st.set_page_config(
-    page_title="AI Encoding Assistant",
+    page_title="AI Encoding Assistant created and Managed by @Husnain and @Usman",
     page_icon="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/lock-fill.svg",
     layout="wide",
 )
@@ -102,8 +102,7 @@ with st.sidebar:
         "</h3>",
         unsafe_allow_html=True,
     )
-    st.caption("Created and managed by Husnain and Usman ")
-    st.caption("Roll No : 23611, 23626")
+
     st.caption("All supported encoding categories")
 
     # ── Base Encodings ────────────────────────────────────────────────
