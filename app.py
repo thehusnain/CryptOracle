@@ -40,7 +40,7 @@ DISPATCH = {
 
 # Page config
 st.set_page_config(
-    page_title="AI Encoding Assistant created and Managed by @Husnain and @Usman",
+    page_title="AI Encoding Assistant",
     page_icon="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/lock-fill.svg",
     layout="wide",
 )
@@ -105,7 +105,7 @@ with st.sidebar:
 
     st.caption("All supported encoding categories")
 
-    # ── Base Encodings ────────────────────────────────────────────────
+    # ── Base Encodings
     st.markdown(
         '<p class="section-label"><i class="bi bi-arrow-left-right"></i>'
         " Base Encodings — reversible</p>",
@@ -127,7 +127,7 @@ with st.sidebar:
             unsafe_allow_html=True,
         )
 
-    # ── ROT Encodings ─────────────────────────────────────────────────
+    #  ROT Encodings 
     st.markdown(
         '<p class="section-label"><i class="bi bi-arrow-repeat"></i>'
         " ROT Encodings — reversible</p>",
@@ -147,7 +147,7 @@ with st.sidebar:
             unsafe_allow_html=True,
         )
 
-    # ── One-Way (info only) ───────────────────────────────────────────
+    # ── One-Way (info only) 
     st.markdown(
         '<p class="section-label"><i class="bi bi-x-circle"></i>'
         " Hashing — one-way, not available</p>",
@@ -175,6 +175,9 @@ st.markdown(
     '<h1 style="margin-bottom:0.2rem;">'
     '<i class="bi bi-lock-fill"></i> AI Encoding Assistant'
     "</h1>",
+    '<h2 style="margin-top:0.1rem; color:#64748b; font-weight:400;">'
+    "Created and managed by Husnain and Usman"
+    "</h2>",
     unsafe_allow_html=True,
 )
 st.caption("Enter your message — the AI will suggest the best encoding method.")
