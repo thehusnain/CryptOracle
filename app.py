@@ -174,8 +174,8 @@ with st.sidebar:
 st.markdown(
     '<h1 style="margin-bottom:0.2rem;">'
     '<i class="bi bi-lock-fill"></i> AI Encoding Assistant'
-    "</h1>",
-    '<h2 style="margin-top:0.1rem; color:#64748b; font-weight:400;">'
+    "</h1>"
+    "<h2 style=\"margin-top:0.1rem; color:#64748b; font-weight:400;\">"
     "Created and managed by Husnain and Usman"
     "</h2>",
     unsafe_allow_html=True,
